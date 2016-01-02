@@ -1,0 +1,36 @@
+# Use PHP53 as default
+#AddHandler application/x-httpd-php53 .php
+#<IfModule mod_suphp.c>
+#    suPHP_ConfigPath /opt/php53/lib
+#</IfModule>
+
+
+# block referrer spam.
+# set the spam_ref variable
+SetEnvIfNoCase Referer "^http://(www.)?buttons-for-website.com" spam_ref=1
+
+SetEnvIfNoCase Referer "^makemoneyonline" spam_ref=1
+
+# block all referres that have spam_ref set
+<FilesMatch "(.*)">
+Order Allow,Deny
+Allow from all
+Deny from env=spam_ref
+</FilesMatch>
+
+
+
+
+RewriteEngine On
+RewriteBase /
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+#RewriteRule ^documentation$ documentation.html [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ ?$1=1 [NC,L]
+
+
+ErrorDocument 404 /404.php
+
