@@ -1,6 +1,6 @@
 ## Pi Player: Web App Component
 
-The web app component of Pi Player is a responsive PHP-based web appliciation.
+The web app component of Pi Player is a responsive PHP-based web application.
 
 ## Installation
 

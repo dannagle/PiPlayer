@@ -6,6 +6,10 @@ Pi Player is a network-based audio player system for the Raspberry Pi. It consis
 1. [Web app](www/) - A responsive web UI to control the Raspberry Pi audio through phones and web browsers. This is an easier alternative than building a from-scratch mobile app.
 1. [Pi service](pi/) - A TCP and UDP listener service that actually launches the audio files when requested.
 
+![All Components](images/pi_player_setup.png)
+
+
+
 ## Static Live Demo
 
 Site can be [viewed here](http://piplayer.naglecode.com/). Commands have been disabled.

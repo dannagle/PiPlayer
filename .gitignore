@@ -1,4 +1,5 @@
 .DS_Store
+*.pxm
 
 # C++ objects and libs
 
