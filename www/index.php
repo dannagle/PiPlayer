@@ -256,7 +256,7 @@ FOOTER:
                         <ul>
                           <li><a href="https://en.wikibooks.org/wiki/Communication_Networks/TCP_and_UDP_Protocols">TCP vs UDP</a>
                           <li><a href="https://en.wikipedia.org/wiki/OSI_model">The OSI Model</a></li>
-                          <li><a href="https://en.wikipedia.org/wiki/Packet_Sender">Wikipedia</a></li>
+                          <li><a href="https://www.raspbian.org/">Raspbian</a></li>
                         </ul>
                     </div>
                 </div><!--/.col-md-3-->
