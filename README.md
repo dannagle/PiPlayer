@@ -57,6 +57,9 @@ https://www.youtube.com/watch?v=4JXBG0TkA1g
 
 Site can be [viewed here](http://piplayer.naglecode.com/). Commands have been disabled.
 
+## Hackster.io
+
+This project is also detailed at [hackster.io](https://www.hackster.io/naglecode/pi-player-049751)
 
 ## License
 All components are GPL v2 or Later. The "www" portion is based heavily on the [Packet Sender web project](https://github.com/dannagle/PacketSender-Website) if you'd prefer an MIT license.
