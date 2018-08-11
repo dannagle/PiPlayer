@@ -53,10 +53,6 @@ Pi Player was heavily tested and developed using the open source project [Packet
 https://www.youtube.com/watch?v=4JXBG0TkA1g
 
 
-## Static Live Web Demo
-
-Site can be [viewed here](http://piplayer.naglecode.com/). Commands have been disabled.
-
 ## Hackster.io
 
 This project is also detailed at [hackster.io](https://www.hackster.io/naglecode/pi-player-049751)
