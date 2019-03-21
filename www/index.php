@@ -9,7 +9,11 @@ if(!empty($_POST['command'])) {
         || $_POST['command'] == "stop"
 
     ) {
-        tcpCommand($_POST['command']);
+        if($_POST['command'] == "next") {
+            tcpCommand("toggle");
+        } else {
+            tcpCommand($_POST['command']);            
+        }
     }
 
     exit;
