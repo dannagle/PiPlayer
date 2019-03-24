@@ -29,7 +29,7 @@ MainWindow::MainWindow(QWidget *parent) :
     setWindowIcon(QIcon("://pi_icon.png"));
 
     udpSocket = new QUdpSocket(this);
-    udpSocket->bind(QHostAddress::Any, 25000);
+    udpSocket->bind(QHostAddress::AnyIPv4, 25000);
 
 
     connect(udpSocket, SIGNAL(readyRead()),
