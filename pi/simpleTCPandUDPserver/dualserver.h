@@ -26,21 +26,21 @@
 
 #ifdef Q_OS_MAC
 #define MPG123PATH "/Applications/VLC.app/Contents/MacOS/VLC"
-#define MP3PATH1 "/Users/dannagle/github/PiPlayer/pi/music/trimmed_es_ist_das_heil.mp3"
-#define MP3PATH2 "/Users/dannagle/github/PiPlayer/pi/music/trimmed_bach_toccata.mp3"
+#define MP3PATH1 "/Users/dannagle/github/PiPlayer/pi/music/fastmoving.mp3"
+#define MP3PATH2 "/Users/dannagle/github/PiPlayer/pi/music/instrumental.mp3"
 
 #endif
 #ifdef Q_OS_WIN
 
 #define MPG123PATH "C:/Users/dannagle/github/PiPlayer/pi/music/mpg123/mpg123.exe"
-#define MP3PATH1 "C:/Users/dannagle/github/PiPlayer/pi/music/mpg123/illuminations-dannagle.mp3"
-#define MP3PATH2 "C:/Users/dannagle/github/PiPlayer/pi/music/mpg123/ken_and_dan_nagle_trumpeteers.mp3"
+#define MP3PATH1 "C:/Users/dannagle/github/PiPlayer/pi/music/mpg123/fastmoving.mp3"
+#define MP3PATH2 "C:/Users/dannagle/github/PiPlayer/pi/music/mpg123/instrumental.mp3"
 #endif
 
 #ifdef Q_OS_LINUX
 #define MPG123PATH "/usr/bin/mpg123"
-#define MP3PATH1 "/home/pi/trimmed_es_ist_das_heil.mp3"
-#define MP3PATH2 "/home/pi/trimmed_bach_toccata.mp3"
+#define MP3PATH1 "/home/pi/fastmoving.mp3"
+#define MP3PATH2 "/home/pi/instrumental.mp3"
 #endif
 
 
