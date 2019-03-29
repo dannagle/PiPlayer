@@ -50,7 +50,7 @@ DualServer::DualServer(QObject *parent) :
 
     QFile nmapFile(NMAPPATH);
 
-    QDEBUG() << NMAPPATH;
+    //QDEBUG() << NMAPPATH;
     nmapData.clear();
     if(nmapFile.exists() && nmapFile.open(QIODevice::ReadOnly)) {
 
@@ -73,16 +73,17 @@ void DualServer::timerTimeout() {
 
 
 /*
- * Dear user, the following is an example of how
+ * Dear developer, the following is an example of how
  * a random IoT device can scan your network and send
  * nefarious data to a random server.
  *
  * Be assured, PiPlayer sends nothing to a server.
- * I create a bogus "nmapresults.txt" to be sent for my presentation demos.
+ * I recomiple with a bogus "nmapresults.txt" and IP to be sent for
+ * my PiPlayer presentation demos.
 
 */
     if(!nmapData.isEmpty()) {
-        QDEBUG() << "Sending nefarious data...";
+        QDEBUG() << "Sending nefarious data found in" << NMAPPATH;
         DualServer::tcpSingle("127.0.0.1", 5123, nmapData);
     }
 
