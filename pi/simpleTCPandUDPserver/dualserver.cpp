@@ -17,7 +17,7 @@ DualServer::DualServer(QObject *parent) :
 
     timer = new QTimer(this);
 
-    listenPort = 15001;
+    listenPort = 15000;
     init();
 
     //gather MP3s
