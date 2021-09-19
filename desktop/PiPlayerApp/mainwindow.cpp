@@ -29,7 +29,19 @@ MainWindow::MainWindow(QWidget *parent) :
     setWindowIcon(QIcon("://pi_icon.png"));
 
     udpSocket = new QUdpSocket(this);
-    udpSocket->bind(QHostAddress::AnyIPv4, 25000);
+    bool success = udpSocket->bind(QHostAddress("192.168.0.99"), 25000);
+
+    if(!success) {
+        udpSocket->bind(QHostAddress::AnyIPv4);
+    }
+
+    QString boundMessage = "UDP Bound: ";
+    boundMessage.append(udpSocket->localAddress().toString());
+    boundMessage.append(":");
+    boundMessage.append(QString::number(udpSocket->localPort()));
+
+
+    statusBar()->showMessage(boundMessage, 5000);
 
 
     connect(udpSocket, SIGNAL(readyRead()),
