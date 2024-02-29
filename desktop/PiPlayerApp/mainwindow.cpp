@@ -63,6 +63,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     statusBar()->insertPermanentWidget(0, twitterButton);
 
+    twitterButton->hide();
 
 //    udpSocket->writeDatagram(QString("Find Units").toLatin1(),QHostAddress::Broadcast,15000);
 

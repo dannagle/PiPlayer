@@ -32,6 +32,11 @@
       </item>
       <item>
        <widget class="QPushButton" name="findPiButton">
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
         <property name="text">
          <string>  Find Pi  </string>
         </property>
@@ -69,6 +74,11 @@
       </item>
       <item>
        <widget class="QLabel" name="piIPLabel">
+        <property name="font">
+         <font>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
         <property name="text">
          <string>Ip Address</string>
         </property>
@@ -119,6 +129,11 @@
       </item>
       <item>
        <widget class="QPushButton" name="playButton">
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
         <property name="text">
          <string>Play</string>
         </property>
@@ -139,6 +154,11 @@
       </item>
       <item>
        <widget class="QPushButton" name="nextButton">
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
         <property name="text">
          <string>Next</string>
         </property>
@@ -159,6 +179,11 @@
       </item>
       <item>
        <widget class="QPushButton" name="stopButton">
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
         <property name="text">
          <string>Stop</string>
         </property>
@@ -187,7 +212,7 @@
      <x>0</x>
      <y>0</y>
      <width>400</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
